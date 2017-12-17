@@ -19,10 +19,10 @@ Route::post('contato', ['as' => 'contato', 'uses' => 'PagesController@mensagens'
 Route::get('saudacao/{nome}', ['as' => 'saudacao', 'uses' => 'PagesController@saudacao']);
 
 
-Route::get('mensagens', ['as' => 'messages.index', 'uses' => 'MessagesController@index']);
-Route::get('mensagens/create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
-Route::post('mensagens/store', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
-Route::get('mensagens/{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
-Route::get('mensagens/{id}/edit', ['as' => 'messages.edit', 'uses' => 'MessagesController@edit']);
-Route::put('mensagens/{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
-Route::delete('mensagens/{id}', ['as' => 'messages.destroy', 'uses' => 'MessagesController@destroy']);
+Route::get('mensagens', ['as' => 'mensagens.index', 'uses' => 'MessagesController@index']);
+Route::get('mensagens/create', ['as' => 'mensagens.create', 'uses' => 'MessagesController@create']);
+Route::post('mensagens/store', ['as' => 'mensagens.store', 'uses' => 'MessagesController@store']);
+Route::get('mensagens/{id}', ['as' => 'mensagens.show', 'uses' => 'MessagesController@show']);
+Route::get('mensagens/{id}/edit', ['as' => 'mensagens.edit', 'uses' => 'MessagesController@edit']);
+Route::put('mensagens/{id}', ['as' => 'mensagens.update', 'uses' => 'MessagesController@update']);
+Route::delete('mensagens/{id}', ['as' => 'mensagens.destroy', 'uses' => 'MessagesController@destroy']);

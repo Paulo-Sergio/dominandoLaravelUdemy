@@ -8,7 +8,7 @@
 @if( session()->has('info') )
 <h3> {{ session('info') }} </h3>
 @else
-<form method="POST" action="{{ route('messages.store') }}">
+<form method="POST" action="{{ route('mensagens.store') }}">
     {!! csrf_field() !!}
     <label>Nome</label>
     <input type="text" name="nome" /> {{ $errors->first('nome') }}<br>

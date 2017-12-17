@@ -22,8 +22,8 @@
             <nav>
                 <a href="{{ route('home') }}" class="{{ activeMenu('/') }}">Home</a>
                 <a href="{{ route('saudacao', 'Paulo') }}" class="{{ activeMenu('saudacao/*') }}">Saudação</a>
-                <a href="{{ route('messages.create') }}" class="{{ activeMenu('mensagens/create') }}">Contato</a>
-                <a href="{{ route('messages.index') }}" class="{{ activeMenu('mensagens') }}">Mensagens</a>
+                <a href="{{ route('mensagens.create') }}" class="{{ activeMenu('mensagens/create') }}">Contato</a>
+                <a href="{{ route('mensagens.index') }}" class="{{ activeMenu('mensagens') }}">Mensagens</a>
             </nav>
         </header>
 
