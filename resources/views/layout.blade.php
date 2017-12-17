@@ -23,7 +23,13 @@
                 <a href="{{ route('home') }}" class="{{ activeMenu('/') }}">Home</a>
                 <a href="{{ route('saudacao', 'Paulo') }}" class="{{ activeMenu('saudacao/*') }}">Saudação</a>
                 <a href="{{ route('mensagens.create') }}" class="{{ activeMenu('mensagens/create') }}">Contato</a>
-                <a href="{{ route('mensagens.index') }}" class="{{ activeMenu('mensagens') }}">Mensagens</a>
+		@if (auth()->check())
+		    <a href="{{ route('mensagens.index') }}" class="{{ activeMenu('mensagens') }}">Mensagens</a>
+		    <a href="/logout" class="{{ activeMenu('mensagens') }}">Logout {{ auth()->user()->email }}</a>
+		@endif
+		@if (auth()->guest())
+		    <a href="/login" class="{{ activeMenu('login') }}">Login</a>
+		@endif
             </nav>
         </header>
 

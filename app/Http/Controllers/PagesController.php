@@ -11,19 +11,8 @@ class PagesController extends Controller {
         return view('home');
     }
 
-    public function contato() {
-        return view('contato');
-    }
-
     public function saudacao($nome) {
         return view('saudacao', compact('nome'));
-    }
-
-    public function mensagens(CreateMessageResquest $request) {
-        $data = $request->all();
-        return redirect()
-                        ->route('contato')
-                        ->with('info', 'Mensagem enviada! :)');
     }
 
 }

@@ -10,11 +10,18 @@
   | and give it the controller to call when that URI is requested.
   |
  */
+Route::get('test', function(){
+    $user = new \App\User;
+    $user->name = 'Paulo';
+    $user->email = 'paulo@gmail.com';
+    $user->password = bcrypt(123456);
+    $user->save();
+    
+    return $user;
+});
+
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@home']);
-
-Route::get('contato', ['as' => 'contato', 'uses' => 'PagesController@contato']);
-Route::post('contato', ['as' => 'contato', 'uses' => 'PagesController@mensagens']);
 
 Route::get('saudacao/{nome}', ['as' => 'saudacao', 'uses' => 'PagesController@saudacao']);
 
@@ -26,3 +33,7 @@ Route::get('mensagens/{id}', ['as' => 'mensagens.show', 'uses' => 'MessagesContr
 Route::get('mensagens/{id}/edit', ['as' => 'mensagens.edit', 'uses' => 'MessagesController@edit']);
 Route::put('mensagens/{id}', ['as' => 'mensagens.update', 'uses' => 'MessagesController@update']);
 Route::delete('mensagens/{id}', ['as' => 'mensagens.destroy', 'uses' => 'MessagesController@destroy']);
+
+Route::get('login', 'Auth\AuthController@showLoginForm');
+Route::post('login', 'Auth\AuthController@login');
+Route::get('logout', 'Auth\AuthController@logout');

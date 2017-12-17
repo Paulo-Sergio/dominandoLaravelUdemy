@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\CreateMessageResquest;
-use App\Http\Requests;
 use App\Message;
-use DB;
-use Carbon\Carbon;
 
 class MessagesController extends Controller {
+
+    public function __construct() {
+	$this->middleware('auth', ['except' => ['create', 'store']]);
+    }
 
     /**
      * Display a listing of the resource.
@@ -40,7 +40,7 @@ class MessagesController extends Controller {
     public function store(CreateMessageResquest $request) {
 	Message::create($request->all());
 
-	return redirect()->route('mensagens.index');
+	return redirect()->route('mensagens.create')->with('info', 'Mensagem enviada com sucesso!');
     }
 
     /**
