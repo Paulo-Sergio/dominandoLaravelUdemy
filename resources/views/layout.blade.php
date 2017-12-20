@@ -25,7 +25,7 @@
                 <a href="{{ route('mensagens.create') }}" class="{{ activeMenu('mensagens/create') }}">Contato</a>
 		@if (auth()->check())
 		    <a href="{{ route('mensagens.index') }}" class="{{ activeMenu('mensagens') }}">Mensagens</a>
-		    <a href="/logout" class="{{ activeMenu('mensagens') }}">Logout {{ auth()->user()->email }}</a>
+		    <a href="/logout">Logout {{ auth()->user()->email }}</a>
 		@endif
 		@if (auth()->guest())
 		    <a href="/login" class="{{ activeMenu('login') }}">Login</a>
