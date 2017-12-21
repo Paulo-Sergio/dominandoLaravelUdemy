@@ -54,7 +54,7 @@
 		<a href="/logout">Logout {{ auth()->user()->email }}</a>
 		@endif
 	      </li>
-	      <!--<li class="dropdown">
+	      <li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 		<ul class="dropdown-menu">
 		  <li><a href="#">Action</a></li>
@@ -63,7 +63,7 @@
 		  <li role="separator" class="divider"></li>
 		  <li><a href="#">Separated link</a></li>
 		</ul>
-	      </li>-->
+	      </li>
 	    </ul>
 	  </div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
@@ -77,6 +77,7 @@
       <footer>Copyright ® {{date('Y')}}</footer>
     </div>
 
+    <script src="/js/all.js"></script>
   </body>
 </html>
 
