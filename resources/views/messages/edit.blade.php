@@ -9,15 +9,15 @@
     {!! method_field('PUT') !!}
     {!! csrf_field() !!}
     <label>Nome</label>
-    <input type="text" name="nome" value="{{$message->nome}}" /> {{ $errors->first('nome') }}<br>
+    <input type="text" name="nome" value="{{$message->nome}}" class="form-control" /> {{ $errors->first('nome') }}<br>
 
     <label>E-mail</label>
-    <input type="text" name="email" value="{{$message->email}}" /> {{ $errors->first('email') }}<br>
+    <input type="text" name="email" value="{{$message->email}}" class="form-control"/> {{ $errors->first('email') }}<br>
 
     <label>Mensagem</label>
-    <textarea name="mensagem">{{$message->mensagem}}</textarea>{{ $errors->first('mensagem') }}<br>
+    <textarea name="mensagem" class="form-control">{{$message->mensagem}}</textarea>{{ $errors->first('mensagem') }}<br>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" class="btn btn-primary btn-lg">
 </form>
 <hr>
 

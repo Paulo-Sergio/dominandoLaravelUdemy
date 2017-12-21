@@ -11,15 +11,15 @@
 <form method="POST" action="{{ route('mensagens.store') }}">
     {!! csrf_field() !!}
     <label>Nome</label>
-    <input type="text" name="nome" /> {{ $errors->first('nome') }}<br>
+    <input type="text" name="nome" class="form-control" /> {{ $errors->first('nome') }}<br>
 
     <label>E-mail</label>
-    <input type="text" name="email" /> {{ $errors->first('email') }}<br>
+    <input type="text" name="email" class="form-control"/> {{ $errors->first('email') }}<br>
 
     <label>Mensagem</label>
-    <textarea name="mensagem"></textarea>{{ $errors->first('mensagem') }}<br>
+    <textarea name="mensagem" class="form-control"></textarea>{{ $errors->first('mensagem') }}<br>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" class="btn btn-primary btn-lg">
 </form>
 @endif
 <hr>

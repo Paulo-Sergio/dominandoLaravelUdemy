@@ -4,11 +4,11 @@
 
 <h1>Login</h1>
 
-<form method="POST" action="login">
+<form class="form-inline" method="POST" action="login">
   {!! csrf_field() !!}
-  <input type="email" name="email" placeholder="E-mail">
-  <input type="password" name="password" placeholder="Password">
-  <input type="submit" value="Entrar"/>
+  <input type="email" name="email" placeholder="E-mail" class="form-control">
+  <input type="password" name="password" placeholder="Password" class="form-control">
+  <input type="submit" value="Entrar" class="btn btn-primary"/>
 </form>
 
 <hr>

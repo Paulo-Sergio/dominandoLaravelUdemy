@@ -4,7 +4,7 @@
 
 <h1>Todas as mensagens</h1>
 
-<table width="100%" border="1">
+<table class="table">
     <thead>
         <tr>
             <th>ID</th>
@@ -26,11 +26,11 @@
             <td>{{ $message->email }}</td>
             <td>{{ $message->mensagem }}</td>
             <td>
-                <a href="{{route('mensagens.edit', $message->id)}}">Editar</a>
+                <a class="btn btn-info btn-xs" href="{{route('mensagens.edit', $message->id)}}">Editar</a>
                 <form method="POST" action="{{ route('mensagens.destroy', $message->id) }}" style="display: inline">
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
-                    <button type="submit">Excluir</button>
+                    <button type="submit" class="btn btn-danger btn-xs">Excluir</button>
                 </form>
             </td>
         </tr>
