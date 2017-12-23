@@ -19,7 +19,7 @@
     <tr>
       <td>{{ $user->id }}</td>
       <td>
-	<a href="{{ route('mensagens.show', $user->id) }}">
+	<a href="{{ route('usuarios.show', $user->id) }}">
 	  {{ $user->name }}
 	</a>
       </td>

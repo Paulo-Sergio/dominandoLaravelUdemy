@@ -10,7 +10,7 @@ class UsersController extends Controller {
     
     public function __construct() {
 	$this->middleware('auth');
-	$this->middleware('roles');
+	$this->middleware('roles:admin');
     }
 
     /**
@@ -30,7 +30,7 @@ class UsersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-	return view('usuarios.create');
+	return view('users.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class UsersController extends Controller {
     public function store(Request $request) {
 	User::create($request->all());
 
-	return redirect()->route('usuarios.create')->with('info', 'Usuário criado com sucesso!!');
+	return redirect()->route('users.create')->with('info', 'Usuário criado com sucesso!!');
     }
 
     /**
@@ -54,7 +54,7 @@ class UsersController extends Controller {
     public function show($id) {
 	$user = User::findOrFail($id);
 
-	return view('usuarios.show', compact('user'));
+	return view('users.show', compact('user'));
     }
 
     /**
@@ -66,7 +66,7 @@ class UsersController extends Controller {
     public function edit($id) {
 	$user = User::findOrFail($id);
 
-	return view('usuarios.edit', compact('user'));
+	return view('users.edit', compact('user'));
     }
 
     /**
@@ -80,7 +80,7 @@ class UsersController extends Controller {
 	$user = User::findOrFail($id);
 	$user->update($request->all());
 	
-	return redirect()->route('usuarios.index');
+	return redirect()->route('users.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class UsersController extends Controller {
 	$user = User::findOrFail($id);
 	$user->delete();
 	
-	return redirect()->route('usuarios.index');
+	return redirect()->route('users.index');
     }
 
 }

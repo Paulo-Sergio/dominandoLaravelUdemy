@@ -44,7 +44,7 @@
 		<li class="{{ activeMenu('mensagens') }}">
 		  <a href="{{ route('mensagens.index') }}">Mensagens</a>
 		</li>
-		@if (auth()->user()->role === 'admin')
+		@if (auth()->user()->hasRoles('admin'))
 		    <li class="{{ activeMenu('usuarios*') }}">
 		      <a href="{{ route('usuarios.index') }}">Usuários</a>
 		    </li>
@@ -74,6 +74,7 @@
     <div class="container">
       @yield('conteudo')
 
+      <hr>
       <footer>Copyright ® {{date('Y')}}</footer>
     </div>
 

@@ -13,8 +13,8 @@ class CheckRoles {
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next) {
-	if (auth()->user()->role === 'admin') {
+    public function handle($request, Closure $next, $role) {
+	if (auth()->user()->hasRoles($role)) {
 	    return $next($request);
 	}
 
