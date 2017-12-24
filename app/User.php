@@ -12,7 +12,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-	'name', 'email', 'role', 'password'
+	'name', 'email', 'password'
     ];
 
     /**
@@ -23,13 +23,24 @@ class User extends Authenticatable {
     protected $hidden = [
 	'password', 'remember_token',
     ];
-    
-    public function role() {
-	return $this->belongsTo(Role::class);
+
+    public function roles() {
+	return $this->belongsToMany(Role::class, 'role_user');
     }
 
-    public function hasRoles($role) {
-	return $this->role->name === $role;
+    public function hasRoles(array $roles) {
+
+	foreach ($roles as $role) {
+
+	    foreach ($this->roles as $userRole) {
+
+		if ($userRole->name === $role) {
+		    return true;
+		}
+	    }
+	}
+
+	return false;
     }
 
 }
