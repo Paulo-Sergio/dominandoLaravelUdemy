@@ -40,7 +40,7 @@ class MessagesController extends Controller {
     public function store(CreateMessageResquest $request) {
 	Message::create($request->all());
 
-	return redirect()->route('mensagens.create')->with('info', 'Mensagem enviada com sucesso!');
+	return redirect()->route('messages.create')->with('info', 'Mensagem enviada com sucesso!');
     }
 
     /**
@@ -78,7 +78,7 @@ class MessagesController extends Controller {
 	$message = Message::findOrFail($id);
 	$message->update($request->all());
 
-	return redirect()->route('mensagens.index');
+	return redirect()->route('messages.index');
     }
 
     /**
@@ -91,7 +91,7 @@ class MessagesController extends Controller {
 	$message = Message::findOrFail($id);
 	$message->delete();
 
-	return redirect()->route('mensagens.index');
+	return redirect()->route('messages.index');
     }
 
 }

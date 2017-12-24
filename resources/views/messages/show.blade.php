@@ -4,7 +4,7 @@
 
 <h1>Mensagem</h1>
 
-<p>Enviado por: {{ $message->nome }} - {{ $message->email }}</p>
-<p>{{ $message->mensagem }}</p>
+<p>Enviado por: <strong>{{ $message->name }} - {{ $message->email }}</strong></p>
+<p><em>{{ $message->message }}</em></p>
 
 @stop()

@@ -13,7 +13,7 @@ class AddPhoneToMessagesTable extends Migration
     public function up()
     {
         Schema::table('messages', function (Blueprint $table) {
-            $table->string('telefone')->after('email')->nullable();
+            $table->string('phone')->after('email')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class AddPhoneToMessagesTable extends Migration
     public function down()
     {
         Schema::table('messages', function (Blueprint $table) {
-            $table->dropColumn('telefone');
+            $table->dropColumn('phone');
         });
     }
 }

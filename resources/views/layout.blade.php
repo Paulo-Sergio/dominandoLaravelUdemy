@@ -37,16 +37,16 @@
 	      <li class="{{ activeMenu('saudacao/*') }}">
 		<a href="{{ route('saudacao', 'Paulo') }}">Saudação</a>
 	      </li>
-	      <li class="{{ activeMenu('mensagens/create') }}">
-		<a href="{{ route('mensagens.create') }}">Contato</a>
+	      <li class="{{ activeMenu('messages/create') }}">
+		<a href="{{ route('messages.create') }}">Contato</a>
 	      </li>
 	      @if (auth()->check())
-		<li class="{{ activeMenu('mensagens') }}">
-		  <a href="{{ route('mensagens.index') }}">Mensagens</a>
+		<li class="{{ activeMenu('messages') }}">
+		  <a href="{{ route('messages.index') }}">Mensagens</a>
 		</li>
 		@if (auth()->user()->hasRoles('admin'))
-		    <li class="{{ activeMenu('usuarios*') }}">
-		      <a href="{{ route('usuarios.index') }}">Usuários</a>
+		    <li class="{{ activeMenu('users*') }}">
+		      <a href="{{ route('users.index') }}">Usuários</a>
 		    </li>
 		@endif
 	      @endif

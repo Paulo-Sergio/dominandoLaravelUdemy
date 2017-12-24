@@ -22,9 +22,9 @@ class CreateMessageResquest extends Request {
      */
     public function rules() {
         return [
-            'nome' => 'required',
+            'name' => 'required',
             'email' => 'required|email',
-            'mensagem' => 'required|min:5'
+            'message' => 'required|min:5'
         ];
     }
 
