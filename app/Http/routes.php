@@ -12,13 +12,17 @@
  */
 Route::get('test', function(){
     $user = new \App\User;
-    $user->name = 'Paulo';
-    $user->email = 'paulo@gmail.com';
+    $user->name = 'Paulo2';
+    $user->email = 'paulo2@gmail.com';
     $user->password = bcrypt(123456);
-    $user->role = 'admin';
+    $user->role_id = 2;
     $user->save();
     
     return $user;
+});
+
+Route::get('roles', function(){
+    return \App\Role::with('users')->get();
 });
 
 

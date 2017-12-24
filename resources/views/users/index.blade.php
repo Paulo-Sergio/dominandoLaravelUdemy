@@ -24,7 +24,7 @@
 	</a>
       </td>
       <td>{{ $user->email }}</td>
-      <td>{{ $user->role }}</td>
+      <td>{{ $user->role->display_name }}</td>
       <td>
 	<a class="btn btn-info btn-xs" href="{{route('messages.edit', $user->id)}}">Editar</a>
 	<form method="POST" action="{{ route('messages.destroy', $user->id) }}" style="display: inline">
