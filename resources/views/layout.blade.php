@@ -60,6 +60,7 @@
 			    <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ auth()->user()->email }} <span class="caret"></span></a>
 				<ul class="dropdown-menu">
+				    <li><a href="/users/{{ auth()->id() }}/edit">Minha Conta</a></li>
 				    <li><a href="/logout">Encerrar Sessão</a></li>
 				</ul>
 			    </li>

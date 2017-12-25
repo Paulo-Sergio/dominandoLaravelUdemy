@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
+use App\Http\Requests\UpdateUserRequest;
 
 class UsersController extends Controller {
     
     public function __construct() {
-	$this->middleware('auth');
-	$this->middleware('roles:admin');
+	$this->middleware('auth', ['except' => ['show']]);
+	$this->middleware('roles:admin', ['except' => ['edit', 'update', 'show']]);
     }
 
     /**
@@ -65,6 +66,8 @@ class UsersController extends Controller {
      */
     public function edit($id) {
 	$user = User::findOrFail($id);
+	
+	$this->authorize($user);
 
 	return view('users.edit', compact('user'));
     }
@@ -76,11 +79,14 @@ class UsersController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(UpdateUserRequest $request, $id) {
 	$user = User::findOrFail($id);
+	
+	$this->authorize($user);
+	
 	$user->update($request->all());
 	
-	return redirect()->route('users.index');
+	return back()->with('info', 'Usuário atualizado!');
     }
 
     /**
@@ -91,6 +97,9 @@ class UsersController extends Controller {
      */
     public function destroy($id) {
 	$user = User::findOrFail($id);
+	
+	$this->authorize($user);
+	
 	$user->delete();
 	
 	return redirect()->route('users.index');

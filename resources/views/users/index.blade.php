@@ -30,8 +30,8 @@
 		@endforeach
 	    </td>
 	    <td>
-		<a class="btn btn-info btn-xs" href="{{route('messages.edit', $user->id)}}">Editar</a>
-		<form method="POST" action="{{ route('messages.destroy', $user->id) }}" style="display: inline">
+		<a class="btn btn-info btn-xs" href="{{route('users.edit', $user->id)}}">Editar</a>
+		<form method="POST" action="{{ route('users.destroy', $user->id) }}" style="display: inline">
 		    {!! csrf_field() !!}
 		    {!! method_field('DELETE') !!}
 		    <button type="submit" class="btn btn-danger btn-xs">Excluir</button>
